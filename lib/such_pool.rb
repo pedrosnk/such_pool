@@ -1,10 +1,11 @@
 
 class SuchPool
 
-	attr_accessor :pool_size
+	attr_reader :pool_size
 
-	def initialize
-		@pool_size = 5
+	def initialize(pool_size: 5)
+		@pool_size = pool_size
+		@qeue = Queue.new
 	end
 
 end
