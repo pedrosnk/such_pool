@@ -12,4 +12,20 @@ describe SuchPool do
 			expect(pool_ten.pool_size).to eq(10)
 		end
 	end
+
+	describe '#run_background' do
+
+		it 'runs operation on background' do
+			result = :not_ok
+			pool.run_background do
+				result = :ok
+			end
+			loop do
+				break if result == :ok
+			end
+
+			expect(result).to eq(:ok)
+		end
+
+	end
 end
