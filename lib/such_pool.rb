@@ -3,23 +3,23 @@
 # operation on background
 class SuchPool
 
-	attr_reader :pool_size
+  attr_reader :pool_size
 
-	def initialize(pool_size: 5)
-		@pool_size = pool_size
-		@queue = Queue.new
-		@pool_size.times do
-			Thread.new do
-				loop do
-					lambd = @queue.pop
-					lambd.call
-				end
-			end
-		end
-	end
+  def initialize(pool_size: 5)
+    @pool_size = pool_size
+    @queue = Queue.new
+    @pool_size.times do
+      Thread.new do
+        loop do
+          lambd = @queue.pop
+          lambd.call
+        end
+      end
+    end
+  end
 
-	def run_background &lambd
-		@queue << lambd
-	end
+  def run_background &lambd
+    @queue << lambd
+  end
 
 end
