@@ -2,6 +2,7 @@
 # Thread pool in ruby. Making possible to schedule and run your
 # operation on background
 class SuchPool
+  VERSION = '0.1.0'.freeze
 
   attr_reader :pool_size
 
