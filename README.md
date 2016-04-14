@@ -17,3 +17,8 @@ Example:
     end
   end
 ```
+
+Is this gem prodution safe?
+===
+
+Sort anwser *No*
